@@ -11,10 +11,15 @@ const Login = () => {
 
     const handleLogin = () => {
         try {
-            const res = axios.post("http://localhost:3007/login", {
-                emailId,
-                password
-            });
+            const res = axios.post("http://localhost:3007/login",
+                {
+                    emailId,
+                    password
+                },
+                {
+                    withCredentials: true
+                }
+            );
         } catch (err) {
             console.log(err);
         }
