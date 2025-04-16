@@ -8,7 +8,7 @@ import { removeUser } from '../utils/userSlice'
 const Navbar = () => {
   const user = useSelector((store) => store.user)
   const dispatch = useDispatch()
-  const navigate= useNavigate()
+  const navigate = useNavigate()
   const handleLogout = async () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
@@ -42,6 +42,11 @@ const Navbar = () => {
                 <Link to="/profile" className="justify-between">
                   Profile
                   <span className="badge">New</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/connections" className="justify-between">
+                  Connections
                 </Link>
               </li>
               <li><Link>Settings</Link></li>
